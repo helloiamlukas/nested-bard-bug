@@ -1,0 +1,88 @@
+title: Article
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              character_limit: 160
+          -
+            handle: content
+            field:
+              container: assets
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: content
+                          field:
+                            container: assets
+                            remove_empty_nodes: false
+                            type: bard
+                            display: Content
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: image
+                                        field:
+                                          container: assets
+                                          type: assets
+                                          display: Image
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: topics
+            field:
+              type: terms
+              taxonomies:
+                - topics
+              display: Topics
+              mode: select

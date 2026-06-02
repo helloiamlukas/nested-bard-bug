@@ -1,0 +1,8 @@
+name: admin
+super: true
+id: ec388177-6574-40ff-a23a-cd163fd196dd
+password_hash: $2y$12$SXHs5UEgtZxJrQ7rLCdAGeMZj3Xm/4LEojvJ1.7zdgPXfVWSFMxHq
+preferences:
+  collections:
+    articles:
+      view: list
