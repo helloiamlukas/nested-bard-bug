@@ -34,6 +34,11 @@ tabs:
                       display: 'New Set'
                       fields:
                         -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
                           handle: content
                           field:
                             container: assets
